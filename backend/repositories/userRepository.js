@@ -9,7 +9,7 @@ const readDb = async () => {
     const users = await fs.readFile(dataFile, 'utf-8');
     return JSON.parse(users);
   } catch {
-    throw createError(500, 'Cannot read data from json file');
+    throw createError(500, 'Cannot read users data from json file');
   }
 };
 
@@ -20,7 +20,7 @@ const writeToDb = async (data) => {
       flag: 'w',
     });
   } catch {
-    throw createError(500, 'Cannot write data to json file');
+    throw createError(500, 'Cannot write users data to json file');
   }
 };
 
