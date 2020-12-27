@@ -9,7 +9,7 @@ const invoke = async (req) => {
     $schema: 'http://json-schema.org/draft-07/schema#',
     type: 'object',
     properties: {
-      username: { type: 'string', pattern: '^([a-zA-Z0-9]{1,15})$' },
+      username: { type: 'string', pattern: '^([a-zA-Z0-9]{3,10})$' },
       password: {
         type: 'string',
         pattern: '(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,12}',
