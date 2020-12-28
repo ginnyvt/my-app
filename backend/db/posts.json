@@ -1,1 +1,26 @@
-[]
+[
+    {
+        "postId": "09401109-d9de-47f1-973d-fb42b5bf5cf7",
+        "title": "Title One",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam elit metus, ornare a velit non, convallis pellentesque magna. Ut suscipit, magna id consequat efficitur, ante nunc convallis sem, vel pretium tortor eros vel tortor.",
+        "url": "https://source.unsplash.com/300x200",
+        "author": "ngoc261",
+        "createdAt": 1609157723632
+    },
+    {
+        "postId": "12e4343a-e580-495a-bb88-127afeab1736",
+        "title": "Title Two",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam elit metus, ornare a velit non, convallis pellentesque magna. Ut suscipit, magna id consequat efficitur, ante nunc convallis sem, vel pretium tortor eros vel tortor.",
+        "url": "https://source.unsplash.com/300x200",
+        "author": "quynh",
+        "createdAt": 1609159234108
+    },
+    {
+        "postId": "390a22ba-ea7b-4bce-a446-7f777e71703b",
+        "title": "Title Three",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam elit metus, ornare a velit non, convallis pellentesque magna. Ut suscipit, magna id consequat efficitur, ante nunc convallis sem, vel pretium tortor eros vel tortor.",
+        "url": "https://source.unsplash.com/300x200",
+        "author": "quynh",
+        "createdAt": 1609159242801
+    }
+]
