@@ -4,5 +4,17 @@
         "username": "ngoc261",
         "email": "thyquynh@gmail.com",
         "password": "Quynhtran456"
+    },
+    {
+        "userId": "396cb692-d533-4bc4-8cd8-9ee4167a7d38",
+        "username": "quynh",
+        "email": "quynhvt1825@gmail.com",
+        "password": "testing1234"
+    },
+    {
+        "userId": "bdc991b7-ad22-415d-a201-0d472310b555",
+        "username": "ngoc",
+        "email": "quynhvt1825@gmail.com",
+        "password": "quynhtran261"
     }
 ]

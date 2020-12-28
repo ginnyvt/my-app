@@ -1,10 +1,72 @@
 import React from 'react';
+import SignUp from './components/auth/SignUp';
+import Login from './components/auth/Login';
+import PostsList from './components/posts/PostsList';
+import NewPost from './components/posts/NewPost';
+
+import axios from 'axios';
+import jwt from 'jsonwebtoken';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Nav from './components/layout/navigation/Nav';
+
+axios.interceptors.request.use(
+  (config) => {
+    let token = localStorage.getItem('token');
+    const refreshToken = localStorage.getItem('refresh_token');
+    // console.log('refreshToken: ' + refreshToken);
+
+    if (token && refreshToken) {
+      const decodedToken = jwt.decode(token);
+
+      if (decodedToken.exp < Date.now() / 1000) {
+        const myHeaders = new Headers();
+        myHeaders.append('Content-Type', 'application/json');
+
+        const stringToken = JSON.stringify({ token: refreshToken });
+        const requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: stringToken,
+          redirect: 'follow',
+        };
+
+        return fetch('http://localhost:8080/token', requestOptions)
+          .then((response) => response.json())
+          .then((result) => {
+            localStorage.setItem('token', result.accessToken);
+            const token = result.accessToken;
+            config.headers.authorization = `Bearer ${token}`;
+            return config;
+          })
+          .catch((error) => {
+            console.log(error);
+            return config;
+          });
+      } else {
+        config.headers.authorization = `Bearer ${token}`;
+        return config;
+      }
+    } else {
+      return config;
+    }
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
 
 function App() {
   return (
-    <div className='App'>
-      <p>My react app</p>
-    </div>
+    <>
+      <Nav />
+      <Switch>
+        <Route exact path='/' component={PostsList} />
+        <Route path='/login' component={Login} />
+        <Route path='/signup' component={SignUp} />
+        <Route path='/posts' component={PostsList} />
+        <Route path='/newpost' component={NewPost} />
+      </Switch>
+    </>
   );
 }
 
