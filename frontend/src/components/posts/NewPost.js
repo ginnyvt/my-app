@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import '../auth/Auth.css';
 
 function NewPost() {
   let history = useHistory();
@@ -8,25 +9,35 @@ function NewPost() {
     history.push('/login');
   }
   return (
-    <form>
-      <h3>Create new post</h3>
-      <div className='form-group new-post'>
-        <label htmlFor='title'>Title</label>
-        <input type='text' placeholder='Title' />
-      </div>
+    <section className='container'>
+      <h3 className='section__title'>/ Create Post</h3>
+      <div className='outer'>
+        <div className='inner'>
+          <form>
+            <div className='input-grids'>
+              <div className='form-group'>
+                <input
+                  type='text'
+                  placeHolder='Title*'
+                  className='form-control'
+                ></input>
+              </div>
 
-      <div className='form-group new-post'>
-        <label htmlFor='description'>Description</label>
-        <textarea
-          name='description'
-          id=''
-          cols='30'
-          rows='10'
-          placeholder='Description'
-        ></textarea>
+              <div className='form-group'>
+                {/* <label htmlFor='description'>Description</label> */}
+                <textarea
+                  placeHolder='Contents*'
+                  rows='8'
+                  cols='41'
+                  className='form-control'
+                ></textarea>
+              </div>
+            </div>
+            <button className='form-btn btn-outline'>Save Post</button>
+          </form>
+        </div>
       </div>
-      <button>Create</button>
-    </form>
+    </section>
   );
 }
 

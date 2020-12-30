@@ -17,6 +17,7 @@ function PostsList() {
       .get('http://localhost:8080/posts')
       .then((response) => {
         setPosts(response.data);
+        console.log(posts);
       })
       .catch((err) => {
         history.push('/login');
@@ -24,12 +25,16 @@ function PostsList() {
   }, []);
 
   return (
-    <div>
-      <p>Post list</p>
-      {posts.map((post) => {
-        return <Post key={post.postId} post={post} />;
-      })}
-    </div>
+    <section>
+      <div className='container'>
+        <h3 className='section__title'>/ Technology</h3>
+        <div className='posts__container'>
+          {posts.map((post) => {
+            return <Post key={post.postId} post={post} />;
+          })}
+        </div>
+      </div>
+    </section>
   );
 }
 
