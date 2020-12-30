@@ -3,13 +3,17 @@ import { Link } from 'react-router-dom';
 
 function SignedInLinks() {
   return (
-    <ul>
-      <li>
-        <Link to='/login'>Login</Link>
+    <ul className='nav__list'>
+      <li className='nav__links'>
+        <Link className='nav__link' to='/login'>
+          Login
+        </Link>
       </li>
 
-      <li>
-        <Link to='/signup'>Sign up</Link>
+      <li className='nav__links'>
+        <Link className='nav__link' to='/signup'>
+          Sign up
+        </Link>
       </li>
     </ul>
   );

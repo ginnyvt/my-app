@@ -18,7 +18,7 @@ const handle = async (token) => {
           const { userId } = decoded;
           return {
             accessToken: jwt.sign({ userId }, process.env.TOKEN_SECRET, {
-              expiresIn: '1m',
+              expiresIn: '10m',
             }),
           };
         }
