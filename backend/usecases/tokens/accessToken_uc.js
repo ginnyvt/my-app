@@ -6,7 +6,7 @@ const createError = require('http-errors');
 const generateAccessToken = (userId) => {
   try {
     return jwt.sign({ userId }, process.env.TOKEN_SECRET, {
-      expiresIn: '1m',
+      expiresIn: '10m',
     });
   } catch (err) {
     throw createError(
