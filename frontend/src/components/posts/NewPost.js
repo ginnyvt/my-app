@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import '../auth/Auth.css';
 import axios from 'axios';
-import { response } from 'express';
 
 function NewPost() {
   let history = useHistory();
