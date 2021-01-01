@@ -2,10 +2,14 @@ import React from 'react';
 
 function Popup({ errors }) {
   return (
-    <div>
-      <h3>Errors</h3>
-      <p>{errors}</p>
-    </div>
+    <section className='container'>
+      <div className='outer'>
+        <div className='inner'>
+          <h3 style={{ color: 'red' }}>Warning!!!</h3>
+          <p>{errors}</p>
+        </div>
+      </div>
+    </section>
   );
 }
 

@@ -3,30 +3,63 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 import './Auth.css';
+import Popup from '../popup/Popup';
+import PopupSuccess from '../popup/PopupSuccess';
 class SignUp extends Component {
   state = {
-    username: '',
-    email: '',
-    password: '',
+    user: {
+      username: '',
+      email: '',
+      password: '',
+    },
+
+    popup: false,
+    popupSuccess: false,
+    errors: '',
   };
 
   handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+    const inputUser = {
+      ...this.state.user,
+      [e.target.name]: e.target.value,
+    };
+    this.setState({ user: inputUser });
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
+
     axios
-      .post('http://localhost:8080/users', this.state)
+      .post('http://localhost:8080/users', this.state.user)
       .then((response) => {
-        console.log(response);
+        if (response.status >= 200 && response.status < 300) {
+          this.setState({ popupSuccess: true });
+          setTimeout(() => {
+            this.props.history.push('/login');
+          }, 5000);
+        }
       })
       .catch((error) => {
-        console.log(error.response);
+        if (error.response.data) {
+          this.setState({ popup: true });
+          this.setState({ errors: error.response.data });
+
+          setTimeout(() => {
+            window.location.reload();
+            this.setState({ popup: false });
+          }, 7000);
+        }
       });
   };
 
   render() {
+    if (this.state.popup) {
+      return <Popup errors={this.state.errors} />;
+    }
+
+    if (this.state.popupSuccess) {
+      return <PopupSuccess />;
+    }
     return (
       <section className='container'>
         <h3 className='section__title'>/ Signup</h3>
@@ -40,7 +73,7 @@ class SignUp extends Component {
                     type='text'
                     className='form-control'
                     placeholder='Username*'
-                    value={this.state.username}
+                    value={this.state.user.username}
                     name='username'
                     onChange={this.handleChange}
                     required
@@ -53,7 +86,7 @@ class SignUp extends Component {
                     type='email'
                     className='form-control'
                     placeholder='Email*'
-                    value={this.state.email}
+                    value={this.state.user.email}
                     name='email'
                     onChange={this.handleChange}
                     required
@@ -66,7 +99,7 @@ class SignUp extends Component {
                     type='password'
                     className='form-control'
                     placeholder='Password*'
-                    value={this.state.password}
+                    value={this.state.user.password}
                     name='password'
                     onChange={this.handleChange}
                     required

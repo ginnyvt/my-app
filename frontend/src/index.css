@@ -196,3 +196,10 @@ a.logo {
   color: var(--primary-color);
   font-size: 1.6rem;
 }
+
+.btn-group {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1.5rem;
+}
