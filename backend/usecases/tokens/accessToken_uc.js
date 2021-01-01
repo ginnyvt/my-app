@@ -6,7 +6,7 @@ const createError = require('http-errors');
 const generateAccessToken = (userId) => {
   try {
     return jwt.sign({ userId }, process.env.TOKEN_SECRET, {
-      expiresIn: '15m',
+      expiresIn: '10m',
     });
   } catch (err) {
     throw createError(
@@ -37,7 +37,7 @@ const handle = async (validatedUser) => {
     await tokenRepository.insert(refreshToken);
     return { accessToken, refreshToken };
   } else {
-    throw createError(400, 'Invalid username and password');
+    throw createError(400, 'Invalid username and password!');
   }
 };
 module.exports = { handle };

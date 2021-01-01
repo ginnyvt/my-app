@@ -1,8 +1,20 @@
 [
-    {
-        "userId": "c4153360-fec7-461e-a86c-0348bc2b935c",
-        "username": "ngoc261",
-        "email": "thyquynh@gmail.com",
-        "password": "Quynhtran456"
-    }
+  {
+    "userId": "c4153360-fec7-461e-a86c-0348bc2b935c",
+    "username": "quythanh",
+    "email": "thyquynh@gmail.com",
+    "password": "Quynhtran456"
+  },
+  {
+    "userId": "396cb692-d533-4bc4-8cd8-9ee4167a7d38",
+    "username": "quynh",
+    "email": "quynhvt1825@gmail.com",
+    "password": "testing1234"
+  },
+  {
+    "userId": "5ffc6d2c-9cca-4ed6-a931-5654234941ae",
+    "username": "quynh2",
+    "email": "quynhvt1825@gmail.com",
+    "password": "testing345"
+  }
 ]
