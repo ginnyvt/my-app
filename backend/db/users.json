@@ -1,21 +1,26 @@
 [
-  {
-    "userId": "c4153360-fec7-461e-a86c-0348bc2b935c",
-    "username": "quythanh",
-    "email": "thyquynh@gmail.com",
-    "password": "Quynhtran456"
-  },
-  {
-    "userId": "396cb692-d533-4bc4-8cd8-9ee4167a7d38",
-    "username": "quynh",
-    "email": "quynhvt1825@gmail.com",
-    "password": "testing1234"
-  },
-
-  {
-    "userId": "a27bb577-f58d-4673-a1ee-94802d8404be",
-    "username": "wynny",
-    "email": "wynny@gmail.com",
-    "password": "wynnytran261"
-  }
+    {
+        "userId": "c4153360-fec7-461e-a86c-0348bc2b935c",
+        "username": "quythanh",
+        "email": "thyquynh@gmail.com",
+        "password": "Quynhtran456"
+    },
+    {
+        "userId": "396cb692-d533-4bc4-8cd8-9ee4167a7d38",
+        "username": "quynh",
+        "email": "quynhvt1825@gmail.com",
+        "password": "testing1234"
+    },
+    {
+        "userId": "a27bb577-f58d-4673-a1ee-94802d8404be",
+        "username": "wynny",
+        "email": "wynny@gmail.com",
+        "password": "wynnytran261"
+    },
+    {
+        "userId": "b2c59548-70db-4e55-a9f1-0999dca52531",
+        "username": "duy",
+        "email": "duy.duong@edu.savonia.fi",
+        "password": "giaduy1234"
+    }
 ]

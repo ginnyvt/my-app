@@ -35,4 +35,10 @@ const insert = async (post) => {
   return post;
 };
 
-module.exports = { list, insert };
+const get = async (id) => {
+  const posts = await readDb();
+  const foundPost = posts.find((p) => p.postId === id);
+  return foundPost;
+};
+
+module.exports = { list, insert, get };

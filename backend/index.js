@@ -19,6 +19,7 @@ const refreshTokenCtr = require('./controllers/tokens/refreshToken_ctr');
 // posts
 const listPostsCtr = require('./controllers/posts/listPosts_ctr');
 const createPostCtr = require('./controllers/posts/createPost_ctr');
+const getPostCtr = require('./controllers/posts/getPost_ctr');
 
 // library using
 app.use(bodyParser.json());
@@ -72,6 +73,16 @@ app.post('/token', async (req, res) => {
 app.get('/posts', async (req, res) => {
   try {
     const data = await listPostsCtr.invoke(req);
+    sendSuccessResponse(res, data);
+  } catch (err) {
+    sendErrorResponse(res, err);
+  }
+});
+
+// Get post
+app.get('/posts/:postId', async (req, res) => {
+  try {
+    const data = await getPostCtr.invoke(req);
     sendSuccessResponse(res, data);
   } catch (err) {
     sendErrorResponse(res, err);
