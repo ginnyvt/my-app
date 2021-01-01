@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import SignUp from './components/auth/SignUp';
 import Login from './components/auth/Login';
 import PostsList from './components/posts/PostsList';
@@ -8,7 +8,7 @@ import ViewPost from './components/posts/ViewPost';
 
 import axios from 'axios';
 import jwt from 'jsonwebtoken';
-import { Route, Switch, useHistory } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 axios.interceptors.request.use(
   (config) => {
@@ -57,48 +57,16 @@ axios.interceptors.request.use(
 );
 
 function App() {
-  let history = useHistory();
-  const token = localStorage.getItem('token');
-  if (!token) {
-    history.push('/login');
-  }
-
-  const [fetchedPosts, setFetchedPosts] = useState([]);
-  useEffect(() => {
-    axios
-      .get('http://localhost:8080/posts')
-      .then((response) => {
-        setFetchedPosts(response.data);
-      })
-      .catch((err) => {
-        history.push('/login');
-      });
-  }, []);
-
-  const handlePost = (id) => {
-    const foundPost = fetchedPosts.find((p) => {
-      return p.postId === id;
-    });
-    return foundPost;
-  };
-
   return (
     <>
       <Nav />
       <Switch>
-        <Route exact path='/'>
-          <PostsList fetchedPosts={fetchedPosts} />
-        </Route>
-        <Route exact path='/login' component={Login} />
-        <Route exact path='/signup' component={SignUp} />
-        <Route exact path='/posts'>
-          <PostsList fetchedPosts={fetchedPosts} />
-        </Route>
-        <Route exact path='/newpost' component={NewPost} />
-
-        <Route exact path='/posts/:postId'>
-          <ViewPost handlePost={handlePost} />
-        </Route>
+        <Route exact path='/' component={PostsList} />
+        <Route path='/login' component={Login} />
+        <Route path='/signup' component={SignUp} />
+        <Route exact path='/posts' component={PostsList} />
+        <Route path='/newpost' component={NewPost} />
+        <Route path='/posts/:postId' component={ViewPost} />
       </Switch>
     </>
   );
