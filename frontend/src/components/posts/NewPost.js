@@ -18,8 +18,8 @@ function NewPost() {
     axios
       .post('http://localhost:8080/posts', { title: title, content: content })
       .then((response) => {
-        console.log(response);
-        history.push('/');
+        history.push('/posts');
+        window.location.reload();
       })
       .catch((err) => console.log(err.response));
   };
