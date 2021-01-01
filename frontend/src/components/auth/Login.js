@@ -4,7 +4,6 @@ import { useHistory, Link } from 'react-router-dom';
 import axios from 'axios';
 
 import './Auth.css';
-import SignedInLinks from '../layout/navigation/SignedInLinks';
 
 function Login() {
   let history = useHistory();
@@ -43,7 +42,7 @@ function Login() {
           setTimeout(() => {
             window.location.reload();
             setPopup(false);
-          }, 10000);
+          }, 5000);
         }
       });
   };

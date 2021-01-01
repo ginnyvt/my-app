@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import SignUp from './components/auth/SignUp';
 import Login from './components/auth/Login';
 import PostsList from './components/posts/PostsList';
 import NewPost from './components/posts/NewPost';
 import Nav from './components/layout/navigation/Nav';
+import ViewPost from './components/posts/ViewPost';
 
 import axios from 'axios';
 import jwt from 'jsonwebtoken';
@@ -65,6 +66,7 @@ function App() {
         <Route path='/signup' component={SignUp} />
         <Route exact path='/posts' component={PostsList} />
         <Route path='/newpost' component={NewPost} />
+        <Route path='/posts/:postId' component={ViewPost} />
       </Switch>
     </>
   );

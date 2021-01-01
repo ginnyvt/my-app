@@ -45,9 +45,9 @@ class SignUp extends Component {
           this.setState({ errors: error.response.data });
 
           setTimeout(() => {
-            window.location.reload();
+            this.props.history.push('/signup');
             this.setState({ popup: false });
-          }, 7000);
+          }, 5000);
         }
       });
   };

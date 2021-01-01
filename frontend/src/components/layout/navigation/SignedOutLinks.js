@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 function SignedOutLinks() {
+  const history = useHistory({});
+
   const logoutHandler = () => {
     localStorage.clear();
-    window.location.reload();
+    history.push('/');
   };
   return (
     <ul className='nav__list'>

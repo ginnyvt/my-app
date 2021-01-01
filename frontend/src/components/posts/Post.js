@@ -9,13 +9,6 @@ const truncateStr = (str, num) => {
   return str.slice(0, num) + '...';
 };
 
-const displayTime = (time) => {
-  const timeStr = new Date(time).toString();
-  moment.locale();
-
-  // return timeStr;
-};
-
 function Post({ post }) {
   const {
     title,
@@ -25,6 +18,7 @@ function Post({ post }) {
     createdAt: time,
     postId,
   } = post;
+
   return (
     <article className='single-post'>
       <div className='post'>
@@ -35,13 +29,15 @@ function Post({ post }) {
         </div>
 
         <div className='post__body'>
-          <Link className='post__desc'>{title}</Link>
+          <Link to={`/posts/${postId}`} className='post__desc'>
+            {title}
+          </Link>
           <p>
             {truncateStr(description, 100)}
-            <a href='' className='readmore'>
+            <Link to={`/posts/${postId}`} className='readmore'>
               {' '}
               Read more
-            </a>
+            </Link>
           </p>
           {/* author */}
           <div className='author'>
@@ -49,8 +45,9 @@ function Post({ post }) {
           </div>
           <ul className='post__meta'>
             <li className='meta__item'>
-              <span className='meta__value'>{displayTime(time)}</span>
-              {/* <span className='meta__value'>December 28, 2020</span> */}
+              <span className='meta__value'>
+                {moment(time).format('MMMM, Do YYYY - h:mm a')}
+              </span>
             </li>
           </ul>
         </div>
