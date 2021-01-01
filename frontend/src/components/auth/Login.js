@@ -30,7 +30,7 @@ function Login() {
     axios
       .post('http://localhost:8080/login', state)
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         localStorage.setItem('token', response.data.accessToken);
         localStorage.setItem('refresh_token', response.data.refreshToken);
         history.push('/posts');
@@ -43,7 +43,7 @@ function Login() {
           setTimeout(() => {
             window.location.reload();
             setPopup(false);
-          }, 2000);
+          }, 10000);
         }
       });
   };

@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SignUp from './components/auth/SignUp';
 import Login from './components/auth/Login';
 import PostsList from './components/posts/PostsList';
 import NewPost from './components/posts/NewPost';
+import Nav from './components/layout/navigation/Nav';
 
 import axios from 'axios';
 import jwt from 'jsonwebtoken';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Nav from './components/layout/navigation/Nav';
+import { Route, Switch } from 'react-router-dom';
 
 axios.interceptors.request.use(
   (config) => {
@@ -63,7 +63,7 @@ function App() {
         <Route exact path='/' component={PostsList} />
         <Route path='/login' component={Login} />
         <Route path='/signup' component={SignUp} />
-        <Route path='/posts' component={PostsList} />
+        <Route exact path='/posts' component={PostsList} />
         <Route path='/newpost' component={NewPost} />
       </Switch>
     </>

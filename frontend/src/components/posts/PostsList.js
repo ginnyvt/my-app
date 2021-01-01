@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import Post from './Post';
 import axios from 'axios';
-import SignedInLinks from '../layout/navigation/SignedInLinks';
 
 function PostsList() {
   let history = useHistory();
@@ -17,7 +16,6 @@ function PostsList() {
       .get('http://localhost:8080/posts')
       .then((response) => {
         setPosts(response.data);
-        console.log(posts);
       })
       .catch((err) => {
         history.push('/login');
