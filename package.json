@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./backend/index.js"
+    "start": "node ./backend/index.js",
+    "server": "nodemon ./backend/index.js",
+    "client-install": "npm install --prefix frontend",
+    "client": "npm start --prefix frontend",
+    "release": "standard-version"
   },
   "keywords": [
     "react",
@@ -17,7 +21,8 @@
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
-    "husky": "^4.3.6"
+    "husky": "^4.3.6",
+    "standard-version": "^9.1.0"
   },
   "husky": {
     "hooks": {
