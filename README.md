@@ -27,10 +27,6 @@ npm start
 
 Quynh Tran
 
-### Version
-
-1.0.0
-
 ### Technologies used
 
 #### _Backend_
