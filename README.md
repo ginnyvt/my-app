@@ -23,6 +23,8 @@ npm start
 
 ## App Info
 
+[Demo](https://wynny-frontend.herokuapp.com/)
+
 ### Author
 
 Quynh Tran
