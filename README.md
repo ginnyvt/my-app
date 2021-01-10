@@ -5,25 +5,27 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### Quick start
 
 ```bash
-# Install dependencies for server
+# Run this command inside the backend folder to install dependencies for server
 npm install
 
-# Install dependencies for client
-npm run client-install
+# Run this command inside the frontend folder to install dependencies for client
+npm install
 
 
-# Run the Node server only
-npm run server
+# Run this command inside the backend folder to start the server
+npm start
 
-# Run the React client only
-npm run client
+# Run this command inside the frontend folder to start react application
+npm start
 
 # Server runs on http://localhost:8080 and client on http://localhost:3000
 ```
 
 ## App Info
 
----
+### Author
+
+Quynh Tran
 
 ### Version
 
